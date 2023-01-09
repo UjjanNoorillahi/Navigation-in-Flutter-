@@ -30,7 +30,10 @@ class _ScreenTwoWidget extends State<ScreenTwo> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ScreenThree()));
+                        builder: (context) => ScreenThree(
+                              name: widget.name,
+                              num: widget.num,
+                            )));
               },
               child: Container(
                 height: 50,
