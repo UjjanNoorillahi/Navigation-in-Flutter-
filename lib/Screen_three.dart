@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 
 class ScreenThree extends StatefulWidget {
-  const ScreenThree({super.key});
+  final String name;
+  final int num;
+  const ScreenThree({super.key, required this.name, required this.num});
 
   @override
   State<ScreenThree> createState() => _ScreenThreeWidget();
@@ -31,8 +33,8 @@ class _ScreenThreeWidget extends State<ScreenThree> {
                 decoration: const BoxDecoration(
                   color: Colors.green,
                 ),
-                child: const Center(
-                  child: Text("Screen 3"),
+                child: Center(
+                  child: Text("${widget.name} ${widget.num}"),
                 ),
               ),
             )

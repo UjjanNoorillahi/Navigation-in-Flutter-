@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'Screen_three.dart';
 
 class ScreenTwo extends StatefulWidget {
-  const ScreenTwo({super.key});
+  final String name;
+  final int num;
+  const ScreenTwo({super.key, required this.name, required this.num});
 
   @override
   State<ScreenTwo> createState() => _ScreenTwoWidget();
@@ -15,7 +17,7 @@ class _ScreenTwoWidget extends State<ScreenTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Screen Two"),
+        title: Text("${widget.name} ${widget.num}"),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
