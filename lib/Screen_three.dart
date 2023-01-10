@@ -2,9 +2,12 @@
 import 'package:flutter/material.dart';
 
 class ScreenThree extends StatefulWidget {
-  final String name;
-  final int num;
-  const ScreenThree({super.key, required this.name, required this.num});
+  static const String id = 'screen_three';
+  // final String name;
+  // final int num;
+  const ScreenThree({
+    super.key,
+  });
 
   @override
   State<ScreenThree> createState() => _ScreenThreeWidget();
@@ -13,9 +16,10 @@ class ScreenThree extends StatefulWidget {
 class _ScreenThreeWidget extends State<ScreenThree> {
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Screen Three"),
+        title: Text(arguments['name']),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -33,8 +37,8 @@ class _ScreenThreeWidget extends State<ScreenThree> {
                 decoration: const BoxDecoration(
                   color: Colors.green,
                 ),
-                child: Center(
-                  child: Text("${widget.name} ${widget.num}"),
+                child: const Center(
+                  child: Text(""),
                 ),
               ),
             )

@@ -1,12 +1,13 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:navigation_practice/utils/routes_names.dart';
 
 import 'Screen_three.dart';
 
 class ScreenTwo extends StatefulWidget {
-  final String name;
-  final int num;
-  const ScreenTwo({super.key, required this.name, required this.num});
+  dynamic data;
+
+  ScreenTwo({super.key, required this.data});
 
   @override
   State<ScreenTwo> createState() => _ScreenTwoWidget();
@@ -17,7 +18,7 @@ class _ScreenTwoWidget extends State<ScreenTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("${widget.name} ${widget.num}"),
+        title: Text(widget.data['Node']),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -27,13 +28,7 @@ class _ScreenTwoWidget extends State<ScreenTwo> {
           children: [
             InkWell(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ScreenThree(
-                              name: widget.name,
-                              num: widget.num,
-                            )));
+                Navigator.pushNamed(context, RouteName.thirdScreen);
               },
               child: Container(
                 height: 50,
